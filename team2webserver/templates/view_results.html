@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta  charset = "UTF-8">
+        <meta  name="description" content=" This is a predictive webserver to study E.coli outbreaks">
+
+        <title> Predictive webserver</title>
+    </head>
+    <style>
+            body {
+                /*background-image: url('microbe.jpg');*/
+                }
+            p.thicker {
+                    font-weight: 1000;
+                    font-family: Georgia;
+                    font-size: 20px;
+                }
+            h.thicker {
+                    font-weight: 1000;
+                    font-family: Georgia;
+                    font-size: 40px;
+                }
+            .button-35 {
+                    align-items: center;
+                    background-color: #fff;
+                    border-radius: 12px;
+                    box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+                    box-sizing: border-box;
+                    color: #121212;
+                    cursor: pointer;
+                    display: inline-flex;
+                    flex: 1 1 auto;
+                    font-family: Inter,sans-serif;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    justify-content: center;
+                    line-height: 1;
+                    margin: 0;
+                    outline: none;
+                    padding: 1rem 1.2rem;
+                    text-align: center;
+                    text-decoration: none;
+                    transition: box-shadow .2s,-webkit-box-shadow .2s;
+                    white-space: nowrap;
+                    border: 0;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                }
+            .button-35:hover {
+                    box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+                }
+
+    </style>
+
+    <body style="background-color:mintcream", background='url('https://images.app.goo.gl/eyYyM8TicsNg1Ke17')'>
+       <h1> <center>  <h class="thicker">Welcome to the E.coli predictive webserver! </center></h1>
+       <br/>
+       <center><p class="thicker">Find your results below or see attachment at {{ email }}. </p></center>
+  
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .btn {
+                background-color: DodgerBlue;
+                border: none;
+                color: white;
+                padding: 12px 30px;
+                cursor: pointer;
+                font-size: 20px;
+            }
+
+            .btn:hover {
+                background-color: darkblue;
+            }
+        </style>
+        <body>
+            <center>
+                <p class="thicker">Download reports:</p>
+                <a href="{% url 'download' %}">
+                    <button class="button-35"><i class="fa fa-download"></i>Download</button><br/><br/>
+                </a>
+                {% if message %}
+                    <p> File not found. </a></p><br/>
+                {% endif %}
+            
+
+            <!-- ====== return button ===== -->
+                <form action="{% url 'index' %}" class="form-inline" method="get">
+                    <button type="submit" class="button-35">Back Home</button>
+                </form>
+            <!-- end return button -->
+            
+
+                <p class="thicker"> Check out the github for more information <a href="https://github.gatech.edu/computationalgenomics2022/Team2-WebServer">github.gatech.edu/computationalgenomics2022/Team2-WebServer!</a> </p>
+            </center>
+
+
+    </body>
+
+</html>
+
